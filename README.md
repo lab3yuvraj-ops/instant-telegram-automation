@@ -1,6 +1,6 @@
 # Nightfall Telegram video backend
 
-Send a title in a private Telegram chat. The backend writes and checks a six-act horror story, creates canonical character and background references with Nano Banana, composes six scenes, generates Pruna video clips, layers Hindi narration, and sends a 45-second 16:9 film back to that chat.
+Send a title in a private Telegram chat. The backend writes and checks a six-act horror story, creates canonical character and background references with Nano Banana, composes six scenes, generates Pruna video clips, layers Hindi narration, and sends a 12- minutes 16:9 film back to that chat.
 
 Telegram is the entire user interface. The dashboard, signup, login, browser API and static frontend are no longer served. Existing production data is preserved.
 
