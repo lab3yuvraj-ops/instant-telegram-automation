@@ -6,10 +6,11 @@ Telegram is the entire user interface. The dashboard, signup, login, browser API
 
 ## Setup
 
-1. Install Python dependencies with `pip install -r requirements.txt`; install FFmpeg and FFprobe.
-2. Fill `TELEGRAM_BOT_TOKEN` in `.env.telegram`, and set `TELEGRAM_ALLOWED_USER_IDS` to the approved private-chat IDs. A blank token leaves Telegram disabled. Groups are ignored.
-3. Keep your existing `.env` and Replicate token. For a fresh setup, start from `.env.example`. Set `OPENAI_API_KEY` for writing and `ELEVENLABS_API_KEY` for Hindi narration; the template includes a default ElevenLabs voice ID that can be replaced later.
-4. Run `python run.py`. Use one local process. Send your title to the bot.
+1. Run `powershell -ExecutionPolicy Bypass -File .\setup.ps1` on Windows, or `sh ./setup.sh` on macOS/Linux. This creates the ignored `.env` and `.env.telegram` files automatically from the templates, without overwriting an existing configuration.
+2. Install Python dependencies with `pip install -r requirements.txt`; install FFmpeg and FFprobe.
+3. In `.env`, add `OPENAI_API_KEY` for writing, `REPLICATE_API_TOKEN` for images and video, and `ELEVENLABS_API_KEY` for Hindi narration. Keep the supplied `ELEVENLABS_VOICE_ID` or replace it with a voice available to that ElevenLabs account. Set `ALLOW_PAID_GENERATION=true` for live films.
+4. In `.env.telegram`, add `TELEGRAM_BOT_TOKEN` and set `TELEGRAM_ALLOWED_USER_IDS` to approved private-chat IDs, or `*` for public direct-message access. A blank token leaves Telegram disabled. Groups are ignored.
+5. Run `python run.py`. Use one local process. Send a title to the bot.
 
 Live generation requires a Replicate token with Nano Banana and Pruna P-Video-2 access, an OpenAI API key for structured writing, and an ElevenLabs API key plus voice ID for Hindi narration. Every live film layers ElevenLabs narration after video generation. Set `TELEGRAM_PRODUCTION_MODE=demo` for a no-generation-cost assembly/delivery test.
 
